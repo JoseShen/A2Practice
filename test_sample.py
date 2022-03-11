@@ -7,6 +7,7 @@ class TestFoo(unittest.TestCase):
     self.assertEqual(foo(1), 3)
     self.assertEqual(foo(2), 4)
     self.assertEqual(foo(3), 5)
+    self.assertEqual(foo(4), 6)
 
 if __name__ == "__main__":
   unittest.main()
