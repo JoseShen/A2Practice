@@ -22,7 +22,7 @@ jobs:
       - name: Deploy via SSH
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.HOST }}
+          host: ${{ secrets.SERVER_NAME }}
           username: ${{ secrets.USERNAMES }}
           password: ${{ secrets.PASSWORDS }}
           port: ${{ secrets.PORT }}
