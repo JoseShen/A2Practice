@@ -8,5 +8,5 @@ class TestFoo(unittest.TestCase):
     self.assertEqual(foo(2), 4)
     self.assertEqual(foo(3), 5)
 
-if name == "main":
+if __name__ == "__main__":
   unittest.main()
