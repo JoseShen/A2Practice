@@ -1,0 +1,30 @@
+name: Deploy Stage Branch to Moons Server
+
+on:
+  push:
+    branches: [ stage ]
+  # Trigger if a PR is merged into stage.
+  pull_request:
+    branches: [ stage ]
+  
+
+  # Deploy on command
+  workflow_dispatch:
+
+jobs:
+  build:
+   
+    runs-on: ubuntu-latest
+
+   
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy via SSH
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASS }}
+          port: ${{ secrets.PORT }}
+          source: "index.html"
+          target: ${{ secrets.TARGET }}
